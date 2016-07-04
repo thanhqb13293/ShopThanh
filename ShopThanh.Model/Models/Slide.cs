@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopThanh.Model.Models
 {
-    [Table("Menus")]
-    public class Menu
+    [Table("Slides")]
+    public class Slide
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -14,21 +14,16 @@ namespace ShopThanh.Model.Models
         [MaxLength(256)]
         public string Name { get; set; }
 
-        [Required]
+        [MaxLength(500)]
+        public string Description { get; set; }
+
+        [MaxLength(256)]
+        public string Image { get; set; }
+
         [MaxLength(256)]
         public string URL { get; set; }
 
         public int? DisplayOrder { get; set; }
-
-        [Required]
-        public int GroupID { get; set; }
-
-        [ForeignKey("GroupID")]
-        public virtual MenuGroup MenuGroup { get; set; }
-
-        [MaxLength(10)]
-        public string Target { get; set; }
-
-        public bool status { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -1,20 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using ShopThanh.Model.Abstract;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopThanh.Model.Models
 {
-    [Table("MenuGroups")]
-    public class MenuGroup
+    [Table("Pages")]
+    public class Page:Audiable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(256)]
         public string Name { get; set; }
 
-        public virtual IEnumerable<Menu> Menus { get; set; }
+        [Required]
+        [MaxLength(256)]
+        [Column(TypeName = "varchar")]
+        public string Alias { get; set; }
+
+        public string Content { get; set; }
     }
 }
