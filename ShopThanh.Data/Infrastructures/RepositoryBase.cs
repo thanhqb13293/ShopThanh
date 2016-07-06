@@ -116,5 +116,11 @@ namespace ShopThanh.Data.Infrastructures
         {
             throw new NotImplementedException();
         }
+
+        public virtual void Delete(int Id)
+        {
+            var entity = dbSet.Find(Id);
+            dbSet.Remove(entity);
+        }
     }
 }
