@@ -19,9 +19,11 @@ namespace ShopThanh.Service
 
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
 
+        IEnumerable<Post> GetAllByCategoryPaging(int CategoryID,int page, int pageSize, out int totalRow);
+
         Post GetById(int Id);
 
-        IEnumerable<Post> GetAllByTagPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByTagPaging(string tag,int page, int pageSize, out int totalRow);
 
         void SaveChanges();
     }
@@ -50,10 +52,15 @@ namespace ShopThanh.Service
             return _postReponsitory.GetAll(new string[] { "PostCategory" });
         }
 
-        public IEnumerable<Post> GetAllByTagPaging(int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllByCategoryPaging(int CategoryID, int page, int pageSize, out int totalRow)
+        {
+            return _postReponsitory.GetMultiPaging(x => x.status && x.CategoryID == CategoryID, out totalRow, page, pageSize,new string[] {"PostCategory" });
+        }
+
+        public IEnumerable<Post> GetAllByTagPaging(string tag,int page, int pageSize, out int totalRow)
         {
             //TODO:Get page by tag
-            return _postReponsitory.GetMultiPaging(x => x.status, out totalRow, page, pageSize);
+            return _postReponsitory.GetAllByTag(tag, page, pageSize,out totalRow);
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)

@@ -12,7 +12,7 @@ namespace ShopThanh.Model.Models
         [Key]
         [MaxLength(50)]
         [Column(TypeName = "varchar")]
-        public int TagID { get; set; }
+        public string TagID { get; set; }
 
         [ForeignKey("PostID")]
         public virtual Post Post { get; set; }
