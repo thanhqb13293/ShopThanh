@@ -3,7 +3,8 @@ using ShopThanh.Data.Repositories;
 using ShopThanh.Model.Models;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Linq.Expressions;
 namespace ShopThanh.Service
 {
     public interface IPostService
@@ -51,27 +52,28 @@ namespace ShopThanh.Service
 
         public IEnumerable<Post> GetAllByTagPaging(int page, int pageSize, out int totalRow)
         {
-            throw new NotImplementedException();
+            //TODO:Get page by tag
+            return _postReponsitory.GetMultiPaging(x => x.status, out totalRow, page, pageSize);
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
         {
-            throw new NotImplementedException();
+            return _postReponsitory.GetMultiPaging(x => x.status, out totalRow, page, pageSize);
         }
 
         public Post GetById(int Id)
         {
-            throw new NotImplementedException();
+            return _postReponsitory.GetSingleById(Id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Commit();
         }
 
         public void Update(Post post)
         {
-            throw new NotImplementedException();
+            _postReponsitory.Update(post);
         }
     }
 }
