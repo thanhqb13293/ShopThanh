@@ -19,8 +19,9 @@ namespace ShopThanh.Model.Models
         public string Alias { get; set; }
 
         public int CategoryID { get; set; }
+        [Column(TypeName ="xml")]
         public string Image { get; set; }
-        public XElement MoreImage { get; set; }
+        public string MoreImage { get; set; }
         public decimal Price { get; set; }
         public decimal? Promotion { get; set; }
         public int? Garantie { get; set; }

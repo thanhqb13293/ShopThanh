@@ -7,11 +7,13 @@ namespace ShopThanh.Model.Models
     public class ProductTag
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order =1)]
         public int ProductID { get; set; }
 
         [Key]
-        public int TagID { get; set; }
+        [Column(TypeName ="varchar",Order =2)]
+        [MaxLength(50)]
+        public string TagID { get; set; }
 
         [ForeignKey("ProductID")]
         public virtual Product Product { get; set; }
