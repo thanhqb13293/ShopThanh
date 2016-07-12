@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ShopThanh.Data.Repositories
 {
     //Definition toutes les méthodes ne sont pas dans RepositoryBase
-    public interface IProducCategoryRepository
+    public interface IProducCategoryRepository: IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string Alias);
     }

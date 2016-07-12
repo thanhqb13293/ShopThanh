@@ -15,7 +15,7 @@ namespace ShopThanh.UnitTest.RepositoryTest
     {
         IDbFactory dbFactory;
         IUnitOfWork UnitOfWork;
-        PostCategoryRepository objRepository;
+        IPostCategoryRepository objRepository;
         [TestInitialize]
         public void Initialize()
         {

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface IPostReponsitory
+    public interface IPostReponsitory: IRepository<Post>
     {
         IEnumerable<Post> GetByAlias(string Alias);
 

@@ -3,7 +3,7 @@ using ShopThanh.Model.Models;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface ISupportOnlineReponsitory
+    public interface ISupportOnlineReponsitory: IRepository<SupportOnline>
     {
     }
 

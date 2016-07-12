@@ -3,7 +3,7 @@ using ShopThanh.Model.Models;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface IFooterReponsitory
+    public interface IFooterReponsitory:IRepository<Footer>
     {
     }
 

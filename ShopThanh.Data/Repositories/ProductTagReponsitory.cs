@@ -3,7 +3,7 @@ using ShopThanh.Model.Models;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface IProductTagReponsitory
+    public interface IProductTagReponsitory: IRepository<ProductTag>
     {
     }
 

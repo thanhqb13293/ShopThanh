@@ -3,7 +3,7 @@ using ShopThanh.Model.Models;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface IOrderRepository
+    public interface IOrderRepository:IRepository<Order>
     {
     }
 

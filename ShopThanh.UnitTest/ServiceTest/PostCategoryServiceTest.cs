@@ -15,14 +15,14 @@ namespace ShopThanh.UnitTest.ServiceTest
     [TestClass]
     public class PostCategoryServiceTest
     {
-        private Mock<PostCategoryRepository> _mockRepository;
+        private Mock<IPostCategoryRepository> _mockRepository;
         private Mock<IUnitOfWork> _mockUnitOfWork;
         private IPostCategoryService _categoryService;
         private List<PostCategory> _lstPostCategory;
         [TestInitialize]
         public void Initialize()
         {
-            _mockRepository = new Mock<PostCategoryRepository>();
+            _mockRepository = new Mock<IPostCategoryRepository>();
             _mockUnitOfWork = new Mock<IUnitOfWork>();
             _categoryService = new PostCategoryService(_mockRepository.Object, _mockUnitOfWork.Object);
             _lstPostCategory = new List<PostCategory>()

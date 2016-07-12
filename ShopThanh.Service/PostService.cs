@@ -30,9 +30,9 @@ namespace ShopThanh.Service
 
     public class PostService : IPostService
     {
-        PostReponsitory _postReponsitory;
+        IPostReponsitory _postReponsitory;
         IUnitOfWork _unitOfWork;
-        public PostService(PostReponsitory Post, IUnitOfWork iU)
+        public PostService(IPostReponsitory Post, IUnitOfWork iU)
         {
             _postReponsitory =Post;
             _unitOfWork = iU;

@@ -26,9 +26,9 @@ namespace ShopThanh.Service
     }
     public class PostCategoryService:IPostCategoryService
     {
-        PostCategoryRepository _postCategoryReponsitory;
+        IPostCategoryRepository _postCategoryReponsitory;
         IUnitOfWork _unitOfWork;
-        public PostCategoryService(PostCategoryRepository PostCategory, IUnitOfWork iU)
+        public PostCategoryService(IPostCategoryRepository PostCategory, IUnitOfWork iU)
         {
             _postCategoryReponsitory = PostCategory;
             _unitOfWork = iU;

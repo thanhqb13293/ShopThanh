@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ShopThanh.Data.Repositories
 {
     //Definition toutes les méthodes ne sont pas dans RepositoryBase
-    public interface IPostCategoryRepository
+    public interface IPostCategoryRepository:IRepository<PostCategory>
     {
         IEnumerable<PostCategory> GetByAlias(string Alias);
     }

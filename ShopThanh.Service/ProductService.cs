@@ -30,9 +30,9 @@ namespace ShopThanh.Service
 
     public class ProductService : IProductService
     {
-        ProductRepository _productReponsitory;
+        IProductRepository _productReponsitory;
         IUnitOfWork _unitOfWork;
-        public ProductService(ProductRepository Product, IUnitOfWork iU)
+        public ProductService(IProductRepository Product, IUnitOfWork iU)
         {
             _productReponsitory = Product;
             _unitOfWork = iU;

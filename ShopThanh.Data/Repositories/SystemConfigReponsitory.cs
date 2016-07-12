@@ -3,7 +3,7 @@ using ShopThanh.Model.Models;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface ISystemConfigReponsitory
+    public interface ISystemConfigReponsitory: IRepository<SystemConfig>
     {
     }
 

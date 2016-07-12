@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopThanh.Data.Repositories
 {
-    public interface IErrorRepository
+    public interface IErrorRepository:IRepository<Error>
     {
 
     }
