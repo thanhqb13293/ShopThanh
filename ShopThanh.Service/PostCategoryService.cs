@@ -11,11 +11,11 @@ namespace ShopThanh.Service
 {
     public interface IPostCategoryService
     {
-        void AddPost(PostCategory postCategory);
+        PostCategory Add(PostCategory postCategory);
 
         void Update(PostCategory postCategory);
 
-        void Delete(int Id);
+        PostCategory Delete(int Id);
 
         IEnumerable<PostCategory> GetAll();
 
@@ -34,14 +34,14 @@ namespace ShopThanh.Service
             _unitOfWork = iU;
         }
 
-        public void AddPost(PostCategory postCategory)
+        public PostCategory Add(PostCategory postCategory)
         {
-            _postCategoryReponsitory.Add(postCategory);
+            return _postCategoryReponsitory.Add(postCategory);
         }
 
-        public void Delete(int Id)
+        public PostCategory Delete(int Id)
         {
-            _postCategoryReponsitory.Delete(Id);
+            return _postCategoryReponsitory.Delete(Id);
         }
 
         public IEnumerable<PostCategory> GetAll()

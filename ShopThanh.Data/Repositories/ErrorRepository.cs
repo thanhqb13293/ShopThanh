@@ -10,6 +10,7 @@ namespace ShopThanh.Data.Repositories
 {
     public interface IErrorRepository
     {
+
     }
 
     public class ErrorRepository : RepositoryBase<Error>, IErrorRepository

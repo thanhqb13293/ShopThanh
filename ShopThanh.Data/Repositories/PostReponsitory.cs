@@ -2,14 +2,14 @@
 using ShopThanh.Model.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace ShopThanh.Data.Repositories
 {
     public interface IPostReponsitory
     {
         IEnumerable<Post> GetByAlias(string Alias);
-        IEnumerable<Post> GetAllByTag(string tag,int pageIndex,int pageSize, out int totalRow);
+
+        IEnumerable<Post> GetAllByTag(string tag, int pageIndex, int pageSize, out int totalRow);
     }
 
     public class PostReponsitory : RepositoryBase<Post>, IPostReponsitory
@@ -23,7 +23,8 @@ namespace ShopThanh.Data.Repositories
             var querry = from p in DbContext.Posts
                          join pt in DbContext.PostTags
                          on p.ID equals pt.PostID
-                         where pt.TagID == tag&&p.status
+                         where pt.TagID == tag && p.status
+                         orderby p.CreateDate descending
                          select p;
             totalRow = querry.Count();
             querry = querry.Skip((pageIndex - 1) * pageSize).Take(pageSize);
