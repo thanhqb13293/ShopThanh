@@ -37,7 +37,7 @@ namespace ShopThanh.Web
             builder.RegisterType<ShopThanhDbContext>().AsSelf().InstancePerRequest();
 
             //ASP Identity
-            //builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
             builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
             builder.Register(n => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
