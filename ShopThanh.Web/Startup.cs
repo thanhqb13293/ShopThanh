@@ -1,12 +1,14 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.DataProtection;
 using Owin;
 using ShopThanh.Data;
 using ShopThanh.Data.Infrastructures;
 using ShopThanh.Data.Repositories;
+using ShopThanh.Model.Models;
 using ShopThanh.Service;
 using ShopThanh.Web.App_Start;
 using System.Reflection;
