@@ -22,7 +22,7 @@ namespace ShopThanh.Data.Infrastructures
         public RepositoryBase(IDbFactory dbFactory)
         {
             this.DbFacory = dbFactory;
-            dbSet = dataContext.Set<T>();
+            dbSet = DbContext.Set<T>();
         }
         public virtual T Add(T entity)
         {

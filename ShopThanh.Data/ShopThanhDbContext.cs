@@ -13,7 +13,7 @@ namespace ShopThanh.Data
     {
         public ShopThanhDbContext():base("ShopThanhConnection")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
         }
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Menu> Menus { set; get; }

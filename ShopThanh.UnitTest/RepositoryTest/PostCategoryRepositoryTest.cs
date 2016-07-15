@@ -36,7 +36,7 @@ namespace ShopThanh.UnitTest.RepositoryTest
             UnitOfWork.Commit();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(1,result.ID);
+            Assert.AreEqual(3,result.ID);
         }
         [TestMethod]
         public void PostCategory_Repository_GetAll()
