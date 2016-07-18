@@ -4,6 +4,7 @@ namespace ShopThanh.Data.Migrations
     using Microsoft.AspNet.Identity.EntityFramework;
     using Model.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -47,6 +48,14 @@ namespace ShopThanh.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+        }
+        private void CreateProductCategorySample(ShopThanh.Data.ShopThanhDbContext context)
+        {
+            List<ProductCategory> ListCategory = new List<ProductCategory>
+            {
+                
+            }
 
         }
     }
