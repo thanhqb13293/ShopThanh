@@ -24,6 +24,13 @@ namespace ShopThanh.Web.Models
         public bool? HomeFlag { get; set; }
         public bool? HotFlag { get; set; }
         public int? ViewCount { get; set; }
+        public DateTime? CreateDate { set; get; }
+        public string CreatedBy { get; set; }
+        public DateTime? UpdateDate { get; set; }
+        public string UpdatedBy { get; set; }
+        public string MetaKeyWord { get; set; }
+        public string MetaDescription { get; set; }
+        public bool status { get; set; }
 
         public virtual ProductCategoryViewModel ProductCategory { get; set; }
     }
