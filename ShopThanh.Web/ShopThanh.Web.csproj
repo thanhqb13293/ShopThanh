@@ -201,6 +201,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extension\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMappingConfiguration.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
@@ -224,7 +225,12 @@
     <Content Include="app\components\products\productListView.html" />
     <Content Include="app\components\products\productEditView.html" />
     <Content Include="app\components\products\products.modules.js" />
+    <Content Include="app\components\products_categories\productCategory.module.js" />
+    <Content Include="app\components\products_categories\productCategoryListController.js" />
+    <Content Include="app\components\products_categories\productCategoryListView.html" />
+    <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\shopthanh.common.js" />
+    <Content Include="app\shared\service\apiService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\skins\skin-black-light.css" />
@@ -468,12 +474,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
-    <Folder Include="app\components\products_categories\" />
     <Folder Include="app\components\roles\" />
     <Folder Include="app\components\users\" />
+    <Folder Include="app\shared\directives\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\service\" />
     <Folder Include="Assets\Client\" />
     <Folder Include="Scripts\Plugins\" />
   </ItemGroup>

@@ -17,6 +17,7 @@ namespace ShopThanh.Web.Mappings
             Mapper.CreateMap<Tag, TagViewModel>();
             Mapper.CreateMap<Product, ProductViewModel>();
             Mapper.CreateMap<ProductCategory, ProductCategoryViewModel>();
+            Mapper.CreateMap<ProductTag, ProductTagViewModel>();
         }
     }
 }
