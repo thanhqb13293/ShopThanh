@@ -1,12 +1,13 @@
 ﻿/// <reference path="/Assets/Admin/libs/angular/angular.js" />
 (function (app) {
-    app.filter('statusFilter', function () {
+    app.filter('statusFilter', statusFilter);
+    function statusFilter() {
         return function (input) {
-            if (input) {
+            if (input == true) {
                 return 'activé';
             }
             else
-                return 'bloc';
+                return 'bloqué';
         }
-    });
+    };
 })(angular.module('shopThanh.common'));

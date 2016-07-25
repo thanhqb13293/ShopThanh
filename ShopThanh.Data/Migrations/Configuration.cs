@@ -29,7 +29,7 @@ namespace ShopThanh.Data.Migrations
             //    Email = "vietthanh.nguyen132@gmail.com",
             //    EmailConfirmed = true,
             //    BirthDay = DateTime.Now,
-            //    FullName = "NGUYEN Viet Thanh"
+            //    FullName = "NGUYEN Viet Thanh"             
             //};
             //manager.Create(user, "123456");
             //if (!rolemanager.Roles.Any())
@@ -53,15 +53,17 @@ namespace ShopThanh.Data.Migrations
         }
         private void CreateProductCategorySample(ShopThanh.Data.ShopThanhDbContext context)
         {
-            if (context.ProductCategories.Count() == 0)
+            if (context.ProductCategories.Count()==0)
             {
                 List<ProductCategory> ListCategory = new List<ProductCategory>
                 {
                     new ProductCategory {Name="Dien Lanh",Alias="Dien-Lanh",status=true },
-                    new ProductCategory {Name="Parfume",Alias="Parfume",status=true },
-                    new ProductCategory {Name="Meuble",Alias="Meuble",status=true },
-                    new ProductCategory {Name="Telecommande",Alias="Tele-Commande",status=true },
+                    new ProductCategory {Name="My Pham",Alias="My-Pham",status=true },
+                    new ProductCategory {Name="Do Gia Dung",Alias="Meuble",status=true },
+                    new ProductCategory {Name="TeleCommande",Alias="Tele-Commande",status=true }
                 };
+                context.ProductCategories.AddRange(ListCategory);
+                context.SaveChanges();
             }
         }
     }

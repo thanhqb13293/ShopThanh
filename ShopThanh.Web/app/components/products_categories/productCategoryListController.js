@@ -1,16 +1,30 @@
 ﻿/// <reference path="/Assets/Admin/libs/angular/angular.js" />
 (function (app) {
-    app.controller('productCategoriesListController', productCategoriesListController);
-    productCategoriesListController.$inject = ['$scope','apiService'];
+    app.controller('productCategoryListController', productCategoryListController);
+    productCategoryListController.$inject = ['$scope','apiService'];
 
-    function productCategoriesListController($scope, apiService) {
+    function productCategoryListController($scope, apiService) {
         $scope.productCategories = [];
+        $scope.page = 0;
+        $scope.pagesCount = 0;
         $scope.getproductCategories = getproductCategories;
+
         function getproductCategories() {
-            apiService.get('/api/productCategory/getall', null, function (result) {
-                $scope.productCategories = result.data;
+            page = page || 0;
+            var config = {
+                params:{
+                    page: page,
+                    pageSize:2
+                }
+            }
+            apiService.get('/api/productcategory/getall', config, function (result) {
+                $scope.productCategories = result.data.items;
+                $scope.page = result.data.page;
+                $scope.pagesCount = result.data.TotalPages;
+                $scope.totalCount = result.data.TotalCount;
+                
             }, function () {
-                Console.log('Load productCategory failed');
+                Console.log('Load productCategories failed');
             });
         }
         $scope.getproductCategories();

@@ -20,13 +20,23 @@ namespace ShopThanh.Web.Api
             this._productCategoryService = productCategoryService;
         }
         [Route("getall")]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        public HttpResponseMessage GetAll(HttpRequestMessage request,int page,int pageSize=20)
         {
             return CreateHttpRespone(request, () =>
             {
+                int totalRow = 0;
                 var model = _productCategoryService.GetAll();
-                var responseData = Mapper.Map<List<ProductCategoryViewModel>>(model);
-                HttpResponseMessage reponse = Request.CreateResponse(HttpStatusCode.OK, model);
+                totalRow = model.Count();
+                var querry = model.OrderByDescending(x => x.CreateDate).Skip(page * pageSize).Take(pageSize);
+                var responseData = Mapper.Map<List<ProductCategoryViewModel>>(querry);
+                var paginationSet = new paginationSet<ProductCategoryViewModel>()
+                {
+                    items = responseData,
+                    Page = page,
+                    TotalPages = totalRow,
+                    TotalCount = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+                HttpResponseMessage reponse = Request.CreateResponse(HttpStatusCode.OK, paginationSet);
 
                 return reponse;
             });

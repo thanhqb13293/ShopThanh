@@ -222,10 +222,6 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu">
-                            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                        </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
@@ -236,8 +232,9 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a ui-sref="product_categories"><i class="fa fa-circle-o"></i>Danh muc San Pham</a></li>
-                            <li><a ui-sref="product"><i class="fa fa-circle-o"></i>San Pham</a></li>
+                            <li><a ui-sref="product_categories"><i class="fa fa-circle-o"></i>Danh Muc San Pham</a></li>
+                            <li><a ui-sref="products"><i class="fa fa-circle-o"></i>San Pham</a></li>
+                           
                         </ul>
                     </li>
                     <li>
@@ -616,10 +613,11 @@
     <script src="~/Assets/Admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/app/shared/modules/shopthanh.common.js"></script>
     <script src="~/app/shared/filters/statusFilter.js"></script>
-    <script src="~/app/shared/service/apiService.js"></script>
     <script src="~/app/components/products/products.modules.js"></script>
     <script src="~/app/components/products_categories/productCategory.module.js"></script>
     <script src="~/app/app.js"></script>
+    <script src="~/app/shared/service/apiService.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
     <script src="~/app/components/products_categories/productCategoryListController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productListController.js"></script>
