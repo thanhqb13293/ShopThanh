@@ -1,23 +1,37 @@
 ﻿/// <reference path="/Assets/Admin/libs/angular/angular.js" />
 (function (app) {
     app.controller('productCategoryListController', productCategoryListController);
-    productCategoryListController.$inject = ['$scope','apiService'];
+    productCategoryListController.$inject = ['$scope','apiService','notificationService'];
 
-    function productCategoryListController($scope, apiService) {
+    function productCategoryListController($scope, apiService, notificationService) {
         $scope.productCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
         $scope.getproductCategories = getproductCategories;
+        $scope.keyword = '';
 
-        function getproductCategories() {
+        $scope.search = search;
+        function search() {
+            getproductCategories();
+        }
+        function getproductCategories(page) {
+
             page = page || 0;
             var config = {
-                params:{
+                params: {
+                    keyword:$scope.keyword,
                     page: page,
                     pageSize:2
                 }
             }
             apiService.get('/api/productcategory/getall', config, function (result) {
+                if (result.data.totalCount==0) {
+                    notificationService.displayWarning('Khong tim thay ban ghi nao');
+                }
+                else
+                {
+                    notificationService.displaySuccess('Tim thay' + result.data.totalCount + ' items');
+                }
                 $scope.productCategories = result.data.items;
                 $scope.page = result.data.page;
                 $scope.pagesCount = result.data.TotalPages;

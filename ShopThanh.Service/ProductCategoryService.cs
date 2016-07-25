@@ -19,6 +19,8 @@ namespace ShopThanh.Service
 
         IEnumerable<ProductCategory> GetAll();
 
+        IEnumerable<ProductCategory> GetAll(string keyword);
+
         IEnumerable<ProductCategory> GetAllByParentID(int ParentId);
 
         ProductCategory GetById(int Id);
@@ -47,6 +49,14 @@ namespace ShopThanh.Service
         public IEnumerable<ProductCategory> GetAll()
         {
             return _productCategoryReponsitory.GetAll();
+        }
+
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!String.IsNullOrEmpty(keyword))
+                return _productCategoryReponsitory.GetMulti(x => x.Name.Contains(keyword) && x.Description.Contains(keyword));
+            else
+                return _productCategoryReponsitory.GetAll();
         }
 
         public IEnumerable<ProductCategory> GetAllByParentID(int ParentId)

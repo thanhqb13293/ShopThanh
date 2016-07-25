@@ -27,6 +27,24 @@ namespace ShopThanh.Web.Infrastructure.Extension
             postCategory.MetaDescription = postCategoryVm.MetaDescription;
             postCategory.status = postCategoryVm.status;
         }
+        public static void UpdaetProductCategory(this ProductCategory productCategory, ProductCategoryViewModel productCategoryVm)
+        {
+            productCategory.ID = productCategoryVm.ID;
+            productCategory.Name = productCategoryVm.Name;
+            productCategory.Alias = productCategoryVm.Alias;
+            productCategory.Image = productCategoryVm.Image;
+            productCategory.Description = productCategoryVm.Description;
+            productCategory.DisplayOrder = productCategoryVm.DisplayOrder;
+            productCategory.ParentID = productCategoryVm.ParentID;
+            productCategory.HomeFlag = productCategoryVm.HomeFlag;
+            productCategory.CreateDate = productCategoryVm.CreateDate;
+            productCategory.CreatedBy = productCategoryVm.CreatedBy;
+            productCategory.UpdateDate = productCategoryVm.UpdateDate;
+            productCategory.UpdatedBy = productCategoryVm.UpdatedBy;
+            productCategory.MetaKeyWord = productCategoryVm.MetaKeyWord;
+            productCategory.MetaDescription = productCategoryVm.MetaDescription;
+            productCategory.status = productCategoryVm.status;
+        }
         public static void UpdaetPost(this Post post, PostViewModel postVm)
         {
             post.ID = postVm.ID;
